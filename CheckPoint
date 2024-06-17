@@ -1,0 +1,35 @@
+def gate(ch1):
+    left=0
+    for i in range(0,len(ch1)):
+        if(i>0):
+            leftiu =left+(ch1[i-1])
+        right=0
+        for j in range(i,len(ch1)):
+            right=right+ch1[j]
+        if left==right:
+            return ch1[j]
+c1=[2,2,1,2,1]
+c2=[4,2,3,1,2,1,2,3]
+c3=[1,1,1,1,1]
+c4=[3,0,3]
+c5=[1,2,1,1,2,1]
+c6=[1,1,1,2,1]
+c7=[5,2,1,3,1,2,5]
+c8=[1,1,1,1,4]
+full=[]
+full.append(c1)
+full.append(c2)
+full.append(c3)
+full.append(c4)
+full.append(c5)
+full.append(c6)
+full.append(c8)
+for i in range(0,len(full)):
+    res=full[i]
+    ele=gate(res)
+    if ele==None:
+        ele=len(res)
+        ele=ele//2
+        print("The value",res[ele])
+    else:
+        print("The value",ele)
