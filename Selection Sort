@@ -1,0 +1,12 @@
+
+arr=list(map(int,input().split()))
+n=len(arr)
+for i in range(0,n):
+    min1=arr[i]
+    pos=i
+    for j in range(i,n):
+        if min1>arr[j]:
+            min1=arr[j]
+            pos=i
+            arr[j],arr[pos]=arr[pos],arr[j]
+print(arr)
