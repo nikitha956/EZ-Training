@@ -1,0 +1,28 @@
+
+def divide(L,Low,High):
+    P=L[High]
+    Pi=High
+    j=Low-1
+    for i in range(Low,High):
+        if L[i]<=P:
+            j=j+1
+            L[i],L[j]=L[j],L[i]#swap
+    j+=1
+    L[j],L[Pi]=L[Pi],L[j]
+    Pi=j
+    return Pi
+def Quick_Sort(L,Low,High):
+    if Low<High:
+        Pi= divide(L,Low,High)
+        print(Pi,Low,High)
+        Quick_Sort(L,Low,Pi-1)
+        Quick_Sort(L,Pi+1,High)
+    return
+    
+if __name__=="__main__":
+    L=list(map(int,input().split()))
+    Low=0
+    High=len(L)-1
+    print(Low,High)
+    Quick_Sort(L,Low,High)
+    print("sorted Array =",L)
