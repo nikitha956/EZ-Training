@@ -1,0 +1,33 @@
+class node_data:
+    def __init__(self,node,Hkey):
+        self.node=node
+        self.hkey=Hkey
+        
+def topview(root):
+    temp=node_data(root,0)
+    Q=[temp]
+    Q.append(None)
+    
+    while len(Q)!=0:
+        curr=Q.pop(0)
+        if curr == None:
+            if len(Q) == 0:
+                break
+            else:
+                Q.append(None)
+                
+        else:
+            if curr.hkey not in key_dict.keys():
+                key_dict[curr.hkey]=curr.node.value
+            if curr.node.left !=None:
+                temp=node_data(curr.node.left,curr.hkey-1)
+                Q.append(temp)
+            if curr.node.right !=None:
+                temp=node_data(curr.node.right,curr.hkey+1)
+                Q.append(temp)
+    return key_dict
+key_dict={}
+topview(root)
+for i in sorted(key_dict):
+            print(key_dict[i])
+print(key_dict)
