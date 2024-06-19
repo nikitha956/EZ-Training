@@ -1,0 +1,20 @@
+class Node:
+    def __init__(self,data):
+        self.value=data
+        self.next=None
+def Create_front(data):
+    if Head==None:
+        Head=data
+        Head.next=None
+    else:
+        temp.next=Head
+        Head=temp
+        
+Head=Tail=Node(10)
+print(Head.value)
+Tail.next=Node(20)
+Tail=Tail.next
+Tail.next=Node(30)
+Tail=Tail.next
+Tail.next=Node(40)
+Tail=Tail.next
