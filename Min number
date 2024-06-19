@@ -1,0 +1,8 @@
+arr=list(map(int,input().split()))
+n=len(arr)
+min1=arr[0]
+for i in range(0,n):
+    if min1>arr[i]:
+        min1=arr[i]
+    i=i+1
+print(min1)
