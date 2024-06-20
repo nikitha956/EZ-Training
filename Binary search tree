@@ -1,0 +1,33 @@
+#BST 
+
+class node:
+    def __init__(self,value):
+        self.value = value 
+        self.right = None 
+        self.left = None
+
+
+def BST(value,root):
+    if root == None:
+        return node(value)
+        
+    if root.value<value:
+        root.right=BST(value,root.right)
+    if root.value > value:
+        root.left=BST(value,root.left)
+    
+    return root 
+
+def inorder(root):
+    if root:
+        inorder(root.left)
+        print(root.value)
+        inorder(root.right)
+        
+if __name__ == "__main__":
+    l = [4,6,7,3,8,2,5,9,1]
+    root = node(l[0])
+    for i in l:
+        BST(i,root)
+
+inorder(root)
